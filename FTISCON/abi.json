@@ -2,7 +2,7 @@
     {
       "constant": true,
       "inputs": [],
-      "name": "F",
+      "name": "controller_count",
       "outputs": [
         {
           "internalType": "uint256",
@@ -16,13 +16,29 @@
     },
     {
       "constant": true,
-      "inputs": [],
-      "name": "T",
-      "outputs": [
+      "inputs": [
         {
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "name": "controllers",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "ip_address",
+          "type": "string"
         }
       ],
       "payable": false,
@@ -99,6 +115,26 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_ip_address",
+          "type": "string"
+        }
+      ],
+      "name": "addController",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "switch_id",
           "type": "uint256"
@@ -125,11 +161,6 @@
       "inputs": [
         {
           "internalType": "string",
-          "name": "_inport",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
           "name": "_src_mac",
           "type": "string"
         },
@@ -139,14 +170,14 @@
           "type": "string"
         },
         {
-          "internalType": "string",
+          "internalType": "uint256",
           "name": "_priority",
-          "type": "string"
+          "type": "uint256"
         },
         {
-          "internalType": "string",
+          "internalType": "uint256",
           "name": "_outport",
-          "type": "string"
+          "type": "uint256"
         },
         {
           "internalType": "uint256",
@@ -192,19 +223,14 @@
           "type": "string"
         },
         {
-          "internalType": "string",
+          "internalType": "uint256",
           "name": "",
-          "type": "string"
+          "type": "uint256"
         },
         {
-          "internalType": "string",
+          "internalType": "uint256",
           "name": "",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -230,78 +256,6 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_switch_id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "_INPORT",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "_SRC",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "_DST",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "_priority",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "_OUTPORT",
-          "type": "string"
-        }
-      ],
-      "name": "verifyFlowRules",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "a",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "b",
-          "type": "string"
-        }
-      ],
-      "name": "compareStrings",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "pure",
       "type": "function"
     }
   ]
